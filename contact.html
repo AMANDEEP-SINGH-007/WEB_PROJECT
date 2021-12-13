@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT</title>
+</head>
+<style>
+  body{
+      background-image: linear-gradient(to bottom right, #48466d, #3d84a8,#46cdcf, #abedd8);
+  }
+
+  .HEAD{
+      color: rgb(31, 12, 12);
+      text-align: center;
+      font-size: 55px;
+  }
+
+  .OREINTATION{
+    height: 40px;
+    width: 100%;
+    padding: 2px;
+    padding-top: 7%;
+  }
+
+  .OREINTATION1{
+    height: 40px;
+    width: 100%;
+    padding: 2px;
+    padding-top: 3%;
+  }
+  .RADIO_BUTTON{
+    height: 120px;
+    width: 100%;
+    padding: 2px;
+  }
+
+  .TEXT_SET{
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    padding-left: 5%;
+    float: left;
+    width: 30%;
+  }
+
+  .TEXT_SET1{
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    padding-left: 5%;
+    float: left;
+    width: 100%;
+  }
+  
+  .FIELD_SET{
+    width: 50%;
+    height: 60%;
+    border: 1px solid black;
+  }
+
+  .BUTTON{
+    padding: 2%;
+    border: 2px solid black;
+    width: 46%;
+    border-radius: 10px;
+    height: 15%;
+
+  }
+
+
+</style>
+<body>
+
+  <div class="HEAD">
+    <i><b>Contact Form</i></b>
+  </div>
+
+  <hr style="height:3px;background-color:rgb(255, 0, 0); border: 0;">
+  <br>
+
+  <form action="https://formspree.io/f/mlezenyy" method="post">
+    
+    <div style="width: 48.5%; float: left; height: 475px; border-left: 2px solid black; border-top: 2px solid black; border-bottom: 2px solid black; border-right: 1px solid black;">
+    <div class="OREINTATION">
+      <label name="NAME" class="TEXT_SET">Name*</label>
+      <input type="text" name="NAME" class="FIELD_SET" required>
+    </div>
+
+    <div class="OREINTATION">
+      <label name="EMAIL" class="TEXT_SET">Email*</label>
+      <input type="email" name="EMAIL" class="FIELD_SET" required>
+    </div>
+
+    <div class="OREINTATION">
+      <label name="ADDRESS" class="TEXT_SET">Address*</label>
+      <input type="text" name="ADDRESS" class="FIELD_SET" required>
+    </div>
+
+    <div class="OREINTATION">
+      <label name="CITY" class="TEXT_SET">City*</label>
+      <input  type="text" name="CITY" class="FIELD_SET" required>
+    </div>
+
+    <div class="OREINTATION">
+      <label name="PIN_CODE" class="TEXT_SET">Postal Code*</label>
+      <input type="text" pattern="^[A-Za-z]\d[A-Za-z][ ]?\d[A-za-z]\d$" class="FIELD_SET" required>
+    </div>
+    <div style="padding-right: 2%;padding-top: 3%; font: 10px;text-align: right;">* Required fields are mandatory</div>
+    </div>
+
+    <div style="width: 48.5%; float: left; height: 475px; border-left: 1px solid black; border-top: 2px solid black; border-bottom: 2px solid black; border-right: 2px solid black;">
+    <div class="RADIO_BUTTON">
+      <div class="TEXT_SET1 OREINTATION">Select your reason:</div>
+      <div style="padding-left: 2%; width: 48%; font-size: 20px; float: left;">
+      <input type="radio" name="CHOICE" checked onclick="CHECKER();">
+      <label name="QUESTION">Question</label>
+      <br>
+      </div>
+
+      <div style="padding-left: 2%; width: 48%; font-size: 20px; float: left;">
+      <input type="radio" name="CHOICE" onclick="CHECKER();">
+      <label name="COMMENT">Comment</label>      
+      <br>
+      </div>
+      
+      <div style="padding-left: 2%;padding-top: 2%; width: 100%; font-size: 20px; float: left;">
+      <input type="radio" id="HIRING" name="CHOICE" onclick="CHECKER();">
+      <label name="HIRING">Hiring</label>
+      </div>
+      <br>
+    </div>
+
+    <div class="OREINTATION" style="padding-left: 4%; height: 150px;">
+      <textarea name="QUESTION"  style="width: 90%; height: 150px; resize: none;" placeholder="Enter your response here."></textarea>
+    </div>
+
+    <div id="HOUR_PAY" class="OREINTATION1">
+      <label name="HR_PAY" style="font-size: 20px; padding-left: 2%;padding-right: 4%;">Enter  your pay rate / hour</label>
+      <input type="number" style="width: 50%; height: 60%; border: 1px solid black;" name="HR_RATE" min="0">  
+    </div>
+
+    <div class="OREINTATION">
+      <div>
+        <input name="SUBMIT" class="BUTTON" type="submit" value="Submit">
+        <input name="RESET" class="BUTTON" type="reset" value="Reset">
+      </div>
+    </div>
+    </div>
+  </form>
+  <br>
+  <br>
+  <hr style="width: 100%; opacity: 0;">
+</body>
+
+<script>
+  var HOUR_PAY = document.querySelector('#HOUR_PAY');
+  var HIRING = document.querySelector('#HIRING');
+  HOUR_PAY.style.display = "none";
+
+  function CHECKER(){
+    if(HIRING.checked){
+      HOUR_PAY.style.display = "block";
+    }
+    else{
+      HOUR_PAY.style.display = "none";
+    }
+  }
+</script>
+</html>
